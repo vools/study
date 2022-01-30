@@ -4,6 +4,17 @@
     become: yes
     become_user: root
     remote_user: vagrant
+    gather_facts: False
+
+    tasks:
+      - name: install python 2
+        raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
+
+  - hosts: nodes
+    become: yes
+    become_user: root
+    remote_user: vagrant
 
     tasks:
       - name: Create directory for ssh-keys
