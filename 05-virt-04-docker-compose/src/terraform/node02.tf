@@ -1,4 +1,4 @@
-resource "yandex_compute_instance" "node01" {
+resource "yandex_compute_instance" "node02" {
   name                      = "node02"
   zone                      = "ru-central1-a"
   hostname                  = "node02.netology.cloud"
